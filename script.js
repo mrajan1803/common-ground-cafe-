@@ -1,38 +1,73 @@
 
-const menuToggle = document.querySelector(".menu-toggle");
-const navLinks = document.querySelector(".nav-links");
+/* =========================================
+   COMMON GROUND — WEBSITE INTERACTIONS
+   ========================================= */
 
-if (menuToggle && navLinks) {
-  menuToggle.addEventListener("click", () => {
-    const isOpen = navLinks.classList.toggle("open");
-    menuToggle.setAttribute("aria-expanded", String(isOpen));
-    menuToggle.setAttribute("aria-label", isOpen ? "Close navigation" : "Open navigation");
-    menuToggle.textContent = isOpen ? "×" : "☰";
-  });
+document.addEventListener("DOMContentLoaded", () => {
+  // Automatically update the footer year.
+  const yearElement = document.getElementById("year");
 
-  navLinks.querySelectorAll("a").forEach(link => {
-    link.addEventListener("click", () => {
-      navLinks.classList.remove("open");
+  if (yearElement) {
+    yearElement.textContent = new Date().getFullYear();
+  }
+
+  // Mobile navigation.
+  const menuToggle = document.querySelector(".menu-toggle");
+  const mainNav = document.querySelector(".main-nav");
+
+  if (menuToggle && mainNav) {
+    const closeMenu = () => {
+      mainNav.classList.remove("is-open");
       menuToggle.setAttribute("aria-expanded", "false");
       menuToggle.setAttribute("aria-label", "Open navigation");
-      menuToggle.textContent = "☰";
+    };
+
+    menuToggle.addEventListener("click", () => {
+      const isOpen = mainNav.classList.toggle("is-open");
+
+      menuToggle.setAttribute("aria-expanded", String(isOpen));
+      menuToggle.setAttribute(
+        "aria-label",
+        isOpen ? "Close navigation" : "Open navigation"
+      );
     });
-  });
-}
 
-const year = document.querySelector("#year");
-if (year) year.textContent = new Date().getFullYear();
+    mainNav.querySelectorAll("a").forEach((link) => {
+      link.addEventListener("click", closeMenu);
+    });
 
-// Demonstration only: no email is collected or submitted.
-const newsletterForm = document.querySelector("#newsletter-form");
-if (newsletterForm) {
-  newsletterForm.addEventListener("submit", event => {
-    event.preventDefault();
-    const message = document.querySelector(".form-message");
-    if (message) {
-      message.textContent =
-        "Thanks for your interest! Email sign-up will be available soon.";
-    }
-    newsletterForm.reset();
-  });
-}
+    document.addEventListener("keydown", (event) => {
+      if (event.key === "Escape") {
+        closeMenu();
+      }
+    });
+
+    window.addEventListener("resize", () => {
+      if (window.innerWidth > 700) {
+        closeMenu();
+      }
+    });
+  }
+
+  // Newsletter demo form.
+  // This does not save or send email addresses.
+  const newsletterForm = document.getElementById("newsletter-form");
+  const formMessage = document.getElementById("form-message");
+  const emailInput = document.getElementById("email");
+
+  if (newsletterForm && formMessage && emailInput) {
+    newsletterForm.addEventListener("submit", (event) => {
+      event.preventDefault();
+
+      if (!emailInput.checkValidity()) {
+        emailInput.reportValidity();
+        return;
+      }
+
+      formMessage.textContent =
+        "Thanks for stopping by! This demo form isn't connected yet.";
+
+      emailInput.value = "";
+    });
+  }
+});
