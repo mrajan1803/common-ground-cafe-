@@ -4,126 +4,153 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Common Ground — Indian coffee, thoughtful objects, and a little room to be. Visit our neighbourhood café in North Chandigarh.">
-  <meta name="theme-color" content="#F3EBDD">
-  <title>Common Ground — A little room to be</title>
+  <meta name="description" content="Common Ground — Indian coffee, thoughtful objects, and space to slow down.">
+  <title>Common Ground | A little room to be.</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
-  <!-- Add your Google Tag Manager code here after creating your GTM account. -->
+  <script src="script.js" defer></script>
 </head>
 <body>
-  <div class="announcement">A little room to be. A little more room to belong.</div>
-
   <header class="site-header">
-    <a class="wordmark" href="index.html" aria-label="Common Ground home">
-      COMMON<br>GROUND<span>®</span>
-    </a>
-    <button class="menu-toggle" aria-label="Open navigation" aria-expanded="false">☰</button>
-    <nav class="nav-links" aria-label="Main navigation">
+    <a class="logo" href="#home">common ground<span>.</span></a>
+    <button class="menu-toggle" aria-label="Toggle navigation" aria-expanded="false">☰</button>
+    <nav class="main-nav">
       <a href="#menu">Menu</a>
       <a href="#shop">Shop</a>
-      <a href="#story">Our story</a>
+      <a href="#story">Our Story</a>
       <a href="#visit">Visit</a>
-      <a class="nav-pill" href="#customise">Make it yours ↗</a>
+      <a class="nav-cta" href="#customise">Make it yours ↗</a>
     </nav>
   </header>
 
   <main>
-    <section class="hero">
+    <section class="hero" id="home">
       <div class="hero-copy">
-        <p class="eyebrow"><span class="dot"></span> YOUR NEIGHBOURHOOD, YOUR PACE</p>
-        <h1>A little<br>room to <em>be.</em></h1>
-        <p class="hero-description">Indian coffee. Thoughtful objects. Space to slow down. Find your kind of common ground.</p>
+        <p class="eyebrow">YOUR NEIGHBOURHOOD, REIMAGINED</p>
+        <h1>A little room<br>to <em>be.</em></h1>
+        <p class="hero-description">Indian coffee. Thoughtful objects. Space to slow down.</p>
         <div class="hero-actions">
-          <a class="button button-dark" href="#menu">Explore the menu <span>↗</span></a>
-          <a class="text-link" href="#story">Get to know us <span>→</span></a>
+          <a class="button button-dark" href="#menu">Explore the menu ↗</a>
+          <a class="text-link" href="#story">Get to know us</a>
         </div>
-        <div class="hero-note"><span>✳</span> Come as you are. Stay a little longer.</div>
+        <p class="hero-note">Good coffee. Good company. No rush.</p>
       </div>
-      <div class="hero-visual">
-        <img src="assets/cafe-interior.jpg" alt="The colourful tables and welcoming interior of Common Ground" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
-        <div class="image-placeholder"><span>COMMON GROUND</span><p>Add your original café photo to<br><code>assets/cafe-interior.jpg</code></p></div>
-        <div class="photo-label"><span>01 / OUR SPACE</span><span>Made for everyday moments ↗</span></div>
-        <div class="floating-note">Good coffee.<br>Good company. <span>✳</span></div>
+      <div class="hero-image">
+        <img src="assets/cafe-interior.png" alt="Common Ground café interior">
+        <div class="image-label">YOUR NEW FAVOURITE CORNER <span>✳</span></div>
       </div>
     </section>
 
-    <section class="ticker" aria-label="Our philosophy">
+    <section class="ticker" aria-label="Our values">
       <span>RELAX</span><span>✳</span><span>BELONG</span><span>✳</span><span>DISCOVER</span><span>✳</span><span>RELAX</span>
     </section>
 
     <section class="section menu-section" id="menu">
       <div class="section-heading">
-        <div><p class="eyebrow">GOOD THINGS, MADE THOUGHTFULLY</p><h2>Your usual.<br><em>Or something new.</em></h2></div>
-        <a class="text-link" href="#menu-items">A taste of the menu ↗</a>
+        <div>
+          <p class="eyebrow">A LITTLE SOMETHING FOR EVERYONE</p>
+          <h2>Made for your<br><em>kind of day.</em></h2>
+        </div>
+        <p>From your everyday coffee to the treat you didn't know you needed, there's a little something waiting.</p>
       </div>
-      <div class="menu-grid" id="menu-items">
+      <div class="menu-grid">
         <article class="menu-card coffee-card">
-          <div class="card-art coffee-art"><span class="art-sun"></span><span class="art-cup">☕</span><span class="art-caption">A DAILY RITUAL</span></div>
-          <div class="menu-card-info"><div><h3>Good coffee</h3><p>Indian beans, familiar favourites, new discoveries.</p></div><span class="round-arrow">↗</span></div>
-        </article>
-        <article class="menu-card drinks-card">
-          <div class="card-art drinks-art"><span class="art-sun"></span><span class="art-cup">◒</span><span class="art-caption">A LITTLE REFRESH</span></div>
-          <div class="menu-card-info"><div><h3>Something cool</h3><p>Iced coffee, bright refreshers and slow afternoons.</p></div><span class="round-arrow">↗</span></div>
+          <div class="menu-art coffee-art"><span>☕</span></div>
+          <div class="menu-card-content"><p class="card-label">THE DAILY RITUAL</p><h3>Good things brew.</h3><p>Comforting classics and coffee worth slowing down for.</p><a href="#visit">Find your cup ↗</a></div>
         </article>
         <article class="menu-card food-card">
-          <div class="card-art food-art"><span class="art-sun"></span><span class="art-cup">✳</span><span class="art-caption">MADE FOR THE MOMENT</span></div>
-          <div class="menu-card-info"><div><h3>A bite to stay for</h3><p>Small comforts, sweet treats and easy favourites.</p></div><span class="round-arrow">↗</span></div>
+          <div class="menu-art food-art"><span>🥐</span></div>
+          <div class="menu-card-content"><p class="card-label">A LITTLE BITE</p><h3>Made to be shared.</h3><p>Fresh bakes and easy bites for every kind of catch-up.</p><a href="#visit">See what's fresh ↗</a></div>
+        </article>
+        <article class="menu-card cool-card">
+          <div class="menu-art cool-art"><span>🍋</span></div>
+          <div class="menu-card-content"><p class="card-label">SOMETHING REFRESHING</p><h3>Take it easy.</h3><p>Cool sips, bright flavours and a little sunshine in a glass.</p><a href="#visit">Find your favourite ↗</a></div>
         </article>
       </div>
-      <p class="disclaimer">Menu imagery and descriptions are illustrative until final products and photography are added.</p>
+      <p class="section-footnote">Sample menu and pricing to be confirmed before launch.</p>
     </section>
 
     <section class="story-section" id="story">
-      <div class="story-art"><span class="story-sun">✳</span><span class="story-words">A PLACE<br>BETWEEN<br>EVERYTHING.</span><span class="story-stamp">COME AS YOU ARE · STAY AS YOU LIKE</span></div>
+      <div class="story-art"><div class="story-circle">CG<span>✳</span></div><p>GOOD THINGS HAPPEN IN GOOD COMPANY.</p></div>
       <div class="story-copy">
-        <p class="eyebrow">NOT JUST A COFFEE STOP</p>
-        <h2>There's space<br>for <em>everyone.</em></h2>
-        <p>For the first coffee of the day. The conversation that runs long. The idea you didn't know you had. Common Ground is a neighbourhood space for all the little moments that make a day feel like yours.</p>
-        <a class="button button-light" href="#visit">A little more about us <span>↗</span></a>
-        <div class="values"><div><span>01</span><b>Relax</b></div><div><span>02</span><b>Belong</b></div><div><span>03</span><b>Discover</b></div></div>
+        <p class="eyebrow">MORE THAN A COFFEE STOP</p>
+        <h2>Somewhere between<br>the first sip and<br><em>the next big idea.</em></h2>
+        <p>Common Ground is built around a simple thought: life feels a little better when there's room to pause, connect and discover something new.</p>
+        <p>Come by for the coffee. Stay for the conversation. Leave with a little more than you came for.</p>
+        <a class="button button-light" href="#visit">A little more about us ↗</a>
       </div>
     </section>
 
     <section class="section shop-section" id="shop">
       <div class="section-heading">
-        <div><p class="eyebrow">TAKE A LITTLE COMMON GROUND HOME</p><h2>Good things.<br><em>Everyday things.</em></h2></div>
-        <a class="text-link" href="#shop-items">Explore the collection ↗</a>
+        <div><p class="eyebrow">TAKE A LITTLE GROUND WITH YOU</p><h2>Good things<br><em>to keep.</em></h2></div>
+        <p>Thoughtful everyday objects, made for coffee rituals, slow mornings and everything in between.</p>
       </div>
-      <div class="shop-grid" id="shop-items">
-        <article class="product-card"><div class="product-art product-mug"><span>cg.</span></div><p class="product-type">THE EVERYDAY EDIT</p><h3>Colour-pop mugs</h3><p>For whatever's brewing.</p></article>
-        <article class="product-card"><div class="product-art product-tote"><span>COMMON<br>GROUND</span></div><p class="product-type">OUT & ABOUT</p><h3>The carry-everything tote</h3><p>A little room for your things.</p></article>
-        <article class="product-card"><div class="product-art product-coffee"><span>GROUND<br>FOR GOOD</span></div><p class="product-type">BREW AT HOME</p><h3>Indian coffee</h3><p>Your ritual, your way.</p></article>
-        <article class="product-card"><div class="product-art product-gear"><span>MAKE<br>TIME.</span></div><p class="product-type">THE SLOW DOWN KIT</p><h3>Brewing essentials</h3><p>Good coffee starts here.</p></article>
+      <div class="shop-grid">
+        <article class="product-card">
+          <div class="product-art mug-art"><span>common<br>ground.</span></div>
+          <div class="product-info"><div><h3>The Everyday Mug</h3><p>For your daily little pause</p></div><span>₹—</span></div>
+        </article>
+        <article class="product-card">
+          <div class="product-art tote-art"><span>TAKE<br>IT EASY.</span></div>
+          <div class="product-info"><div><h3>The Carry-All Tote</h3><p>Bring your world along</p></div><span>₹—</span></div>
+        </article>
+        <article class="product-card">
+          <div class="product-art coffee-product-art"><span>CG<br>COFFEE</span></div>
+          <div class="product-info"><div><h3>House Coffee</h3><p>Your ritual, at home</p></div><span>₹—</span></div>
+        </article>
+        <article class="product-card">
+          <div class="product-art plate-art"><span>made for<br>the everyday</span></div>
+          <div class="product-info"><div><h3>Little Things Collection</h3><p>Objects with a purpose</p></div><span>₹—</span></div>
+        </article>
       </div>
-      <p class="disclaimer">Concept product visuals. Availability and prices will be added when the collection is finalised.</p>
+      <p class="section-footnote">Illustrative product concepts. Availability and prices to be confirmed.</p>
     </section>
 
     <section class="customise-section" id="customise">
-      <div><p class="eyebrow">A LITTLE MORE YOU</p><h2>Make it<br><em>your own.</em></h2><p>Pick your colours, choose your everyday favourite, and make a little space for your kind of common ground.</p></div>
-      <div class="customise-art"><div class="colour-circle green"></div><div class="colour-circle yellow"></div><div class="colour-circle red"></div><div class="colour-circle blue"></div><span>YOUR THING.<br>YOUR COLOUR.</span></div>
+      <div class="customise-copy">
+        <p class="eyebrow">YOUR THING. YOUR WAY.</p>
+        <h2>Make it<br><em>your kind of common.</em></h2>
+        <p>Your coffee, your cup, your little ritual. Discover thoughtful details and ways to make your Common Ground experience feel like yours.</p>
+        <a class="button button-dark" href="#visit">Let's make it yours ↗</a>
+      </div>
+      <div class="customise-art"><div class="customise-mug">CG<span>✳</span></div><div class="customise-note">A LITTLE ROOM<br>TO BE YOURSELF.</div></div>
     </section>
 
     <section class="visit-section" id="visit">
-      <div class="visit-copy"><p class="eyebrow">YOUR TABLE IS WAITING</p><h2>See you<br><em>around?</em></h2><p>Find us in North Chandigarh. Drop in for a coffee, stay for the atmosphere.</p><a class="button button-dark" href="https://www.google.com/maps/search/?api=1&query=North+Chandigarh" target="_blank" rel="noopener noreferrer">Find your way here ↗</a><p class="small-note">Sample location link — replace it with the actual café address before launch.</p></div>
-      <div class="visit-details"><div><span>01 / FIND US</span><p>North Chandigarh<br>Exact address to be added</p></div><div><span>02 / DROP BY</span><p>Opening hours to be confirmed</p></div><div><span>03 / SAY HELLO</span><p><a href="mailto:hello@commonground.example">Email us ↗</a></p></div></div>
+      <div class="visit-copy">
+        <p class="eyebrow">YOUR TABLE IS WAITING</p>
+        <h2>Find your<br><em>common ground.</em></h2>
+        <p>A corner for catching up, a table for getting things done, or a moment that's just yours.</p>
+        <p><strong>North Chandigarh</strong><br>Exact location and opening hours coming soon.</p>
+        <a class="button button-light" href="https://www.google.com/maps" target="_blank" rel="noopener noreferrer">Find us on the map ↗</a>
+      </div>
+      <div class="visit-details">
+        <div><span>01 / COME AS YOU ARE</span><h3>Stay a little.</h3><p>No rush, no fuss. Just make yourself at home.</p></div>
+        <div><span>02 / BRING YOUR PEOPLE</span><h3>There's room.</h3><p>For friends, new ideas and conversations that go somewhere.</p></div>
+        <div><span>03 / FIND YOUR RITUAL</span><h3>Make it yours.</h3><p>Your usual order or something new to discover.</p></div>
+      </div>
     </section>
 
-    <section class="newsletter">
-      <p class="eyebrow">LET'S KEEP IN TOUCH</p><h2>Good things, <em>occasionally.</em></h2><p>Updates, new things on the menu, and a little common ground in your inbox.</p>
-      <form id="newsletter-form"><label class="visually-hidden" for="newsletter-email">Email address</label><input id="newsletter-email" type="email" placeholder="Your email address" required><button type="submit" aria-label="Subscribe">Count me in ↗</button></form>
-      <p class="form-message" aria-live="polite"></p>
-      <p class="disclaimer">Demo form only. Connect a consent-based email service before collecting real subscriptions.</p>
+    <section class="newsletter-section">
+      <p class="eyebrow">A NOTE FROM OUR CORNER</p>
+      <h2>A little good in<br><em>your inbox.</em></h2>
+      <p>Updates, new things and little reasons to slow down. Only the good stuff.</p>
+      <form class="newsletter-form" id="newsletter-form">
+        <label class="visually-hidden" for="email">Email address</label>
+        <input id="email" type="email" placeholder="Your email address" required>
+        <button type="submit">Count me in ↗</button>
+      </form>
+      <p class="form-message" id="form-message" aria-live="polite"></p>
+      <p class="section-footnote">Demo form only. Newsletter sign-ups are not stored or sent.</p>
     </section>
   </main>
 
   <footer class="site-footer">
-    <div class="footer-top"><a class="wordmark footer-wordmark" href="#">COMMON<br>GROUND<span>®</span></a><p>A little room to be.<br>A little more room to belong.</p><a class="back-top" href="#">Back to top ↑</a></div>
-    <div class="footer-bottom"><span>© <span id="year"></span> COMMON GROUND</span><span>INDIAN COFFEE. THOUGHTFUL OBJECTS.</span><div><a href="#story">Our story</a><a href="#visit">Visit</a><a href="mailto:hello@commonground.example">Contact</a></div></div>
+    <div class="footer-top"><a class="logo footer-logo" href="#home">common ground<span>.</span></a><p>A little room to be.</p><a href="#home">Back to the top ↑</a></div>
+    <div class="footer-bottom"><span>© <span id="year"></span> Common Ground</span><span>Made for slower moments.</span><span>North Chandigarh · Location to be confirmed</span></div>
   </footer>
-
-  <script src="script.js"></script>
 </body>
 </html>
