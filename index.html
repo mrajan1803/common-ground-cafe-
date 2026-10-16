@@ -65,19 +65,26 @@
       flex-shrink: 0;
     }
 
-    .cg-logo-mark {
-      width: 48px;
-      height: 48px;
-      border: 1.5px solid var(--cg-dark);
-      border-radius: 50%;
-      display: grid;
-      place-items: center;
-      font-family: "Playfair Display", serif;
-      font-size: 21px;
-      line-height: 1;
-      letter-spacing: -2px;
-      padding-right: 2px;
-    }
+   .cg-logo-mark {
+  width: 48px;
+  height: 48px;
+  border: 1.5px solid var(--cg-dark);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+
+  font-family: "Playfair Display", serif;
+  font-size: 21px;
+  font-weight: 500;
+  line-height: 1;
+  letter-spacing: -2px;
+
+  padding: 0;
+  text-align: center;
+  flex-shrink: 0;
+}
 
     .cg-logo-name {
       font-family: "DM Sans", sans-serif;
