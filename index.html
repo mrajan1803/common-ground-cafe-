@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -24,9 +23,13 @@
       --cg-blue: #355C7D;
     }
 
-    * { box-sizing: border-box; }
+    * {
+      box-sizing: border-box;
+    }
 
-    html { scroll-behavior: smooth; }
+    html {
+      scroll-behavior: smooth;
+    }
 
     body {
       margin: 0;
@@ -35,19 +38,28 @@
       font-family: "DM Sans", sans-serif;
     }
 
-    a { color: inherit; text-decoration: none; }
-    img { display: block; max-width: 100%; }
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+    }
 
     .cg-container {
       width: min(1320px, calc(100% - 48px));
       margin-inline: auto;
     }
 
+    /* HEADER */
+
     .cg-header {
       position: relative;
       z-index: 10;
       background: var(--cg-cream);
-      border-bottom: 1px solid rgba(35,71,53,.14);
+      border-bottom: 1px solid rgba(35, 71, 53, .14);
     }
 
     .cg-nav {
@@ -65,28 +77,22 @@
       flex-shrink: 0;
     }
 
- 
-.cg-logo-mark {
-  width: 48px;
-  height: 48px;
-  border: 1.5px solid var(--cg-dark);
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-sizing: border-box;
-  font-family: "Playfair Display", serif;
-  font-size: 21px;
-  font-weight: 500;
-  line-height: 1;
-  letter-spacing: -1.5px;
-  padding: 0;
-  text-align: center;
-  flex-shrink: 0;
-  text-indent: 0;
-transform: translateX(1px);
-}
-
+    .cg-logo-mark {
+      width: 48px;
+      height: 48px;
+      border: 1.5px solid var(--cg-dark);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: "Playfair Display", serif;
+      font-size: 21px;
+      font-weight: 500;
+      line-height: 1;
+      letter-spacing: -1.5px;
+      flex-shrink: 0;
+      transform: translateX(1px);
+    }
 
     .cg-logo-name {
       font-family: "DM Sans", sans-serif;
@@ -104,14 +110,17 @@ transform: translateX(1px);
       font-size: 13px;
     }
 
-    .cg-links a:hover { color: var(--cg-orange); }
+    .cg-links a:hover {
+      color: var(--cg-orange);
+    }
 
     .cg-nav-cta {
       background: transparent;
       color: var(--cg-dark) !important;
       padding: 0;
-      border-radius: 0;
     }
+
+    /* HERO */
 
     .cg-hero {
       padding: 0;
@@ -135,17 +144,17 @@ transform: translateX(1px);
       max-width: 360px;
     }
 
-    .cg-hero .cg-eyebrow {
-      font-size: 10px;
-      letter-spacing: 1.8px;
-    }
-
     .cg-eyebrow {
       font-size: 11px;
       font-weight: 700;
       letter-spacing: 2.2px;
       text-transform: uppercase;
       color: var(--cg-green);
+    }
+
+    .cg-hero .cg-eyebrow {
+      font-size: 10px;
+      letter-spacing: 1.8px;
     }
 
     .cg-hero h1 {
@@ -189,7 +198,9 @@ transform: translateX(1px);
       transition: transform .2s ease, background .2s ease;
     }
 
-    .cg-button:hover { transform: translateY(-2px); }
+    .cg-button:hover {
+      transform: translateY(-2px);
+    }
 
     .cg-button-primary {
       background: var(--cg-dark);
@@ -221,7 +232,6 @@ transform: translateX(1px);
       min-height: 650px;
       object-fit: cover;
       object-position: center;
-      border-radius: 0;
       background: #e4d3b7;
     }
 
@@ -236,6 +246,8 @@ transform: translateX(1px);
       font-style: italic;
     }
 
+    /* TICKER */
+
     .cg-ticker {
       overflow: hidden;
       background: var(--cg-green);
@@ -247,7 +259,11 @@ transform: translateX(1px);
       text-transform: uppercase;
     }
 
-    .cg-section { padding: 88px 0; }
+    /* GENERAL SECTIONS */
+
+    .cg-section {
+      padding: 88px 0;
+    }
 
     .cg-section-heading {
       display: flex;
@@ -274,26 +290,51 @@ transform: translateX(1px);
       white-space: nowrap;
     }
 
+    /* MENU CARDS WITH PHOTOS */
+
     .cg-menu-grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(3, minmax(0, 1fr));
       gap: 18px;
     }
 
     .cg-menu-card {
-      min-height: 265px;
-      padding: 28px;
+      padding: 0 0 26px;
       border-radius: 4px;
       display: flex;
       flex-direction: column;
-      justify-content: space-between;
+      overflow: hidden;
     }
 
-    .cg-menu-card:nth-child(1) { background: #E9C46A; }
-    .cg-menu-card:nth-child(2) { background: #DCE5D7; }
-    .cg-menu-card:nth-child(3) { background: #E8C7B9; }
+    .cg-menu-card:nth-child(1) {
+      background: #E9C46A;
+    }
 
-    .cg-menu-card .cg-card-number {
+    .cg-menu-card:nth-child(2) {
+      background: #DCE5D7;
+    }
+
+    .cg-menu-card:nth-child(3) {
+      background: #E8C7B9;
+    }
+
+    .cg-menu-image {
+      width: 100%;
+      height: 245px;
+      object-fit: cover;
+      object-position: center;
+    }
+
+    .cg-menu-card-content {
+      flex: 1;
+      padding: 24px 26px 0;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .cg-card-number {
+      margin-bottom: 22px;
       font-size: 11px;
       letter-spacing: 1.5px;
     }
@@ -303,14 +344,21 @@ transform: translateX(1px);
       font-family: "Playfair Display", serif;
       font-size: 31px;
       font-weight: 500;
+      line-height: 1.2;
     }
 
     .cg-menu-card p {
       max-width: 260px;
-      margin: 0;
+      margin: 0 0 22px;
       font-size: 13px;
       line-height: 1.8;
     }
+
+    .cg-menu-card .cg-text-link {
+      margin-top: auto;
+    }
+
+    /* COMMON GROUND STORY */
 
     .cg-story {
       background: var(--cg-dark);
@@ -324,44 +372,35 @@ transform: translateX(1px);
       gap: 65px;
     }
 
+    /* The original yellow graphic is replaced with the café photo.
+       The dark green background and right-side copy stay unchanged. */
+
     .cg-story-art {
-      min-height: 390px;
-      padding: 38px;
-      display: flex;
-      align-items: flex-end;
-      background: var(--cg-yellow);
-      color: var(--cg-dark);
       position: relative;
+      min-height: 390px;
+      padding: 0;
+      display: block;
       overflow: hidden;
+      background: var(--cg-yellow);
+    }
+
+    .cg-story-image {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      min-height: 390px;
+      object-fit: cover;
+      object-position: center;
     }
 
     .cg-story-art::before,
     .cg-story-art::after {
-      content: "";
-      position: absolute;
-      border: 1px solid rgba(35,71,53,.35);
-      border-radius: 50%;
-      width: 270px;
-      height: 270px;
-      top: -75px;
-      right: -45px;
-    }
-
-    .cg-story-art::after {
-      width: 190px;
-      height: 190px;
-      top: -35px;
-      right: -5px;
+      display: none;
     }
 
     .cg-story-art p {
-      position: relative;
-      z-index: 1;
-      max-width: 340px;
-      margin: 0;
-      font-family: "Playfair Display", serif;
-      font-size: clamp(36px, 4vw, 55px);
-      line-height: 1.12;
+      display: none;
     }
 
     .cg-story-copy p {
@@ -373,12 +412,14 @@ transform: translateX(1px);
 
     .cg-story-copy .cg-button {
       margin-top: 15px;
-      border: 1px solid rgba(243,235,221,.6);
+      border: 1px solid rgba(243, 235, 221, .6);
     }
+
+    /* SHOP */
 
     .cg-shop-grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(3, minmax(0, 1fr));
       gap: 18px;
     }
 
@@ -405,10 +446,13 @@ transform: translateX(1px);
       color: white;
       font-family: "Playfair Display", serif;
       font-size: 26px;
-      box-shadow: 9px 12px 0 rgba(35,71,53,.12);
+      text-align: center;
+      box-shadow: 9px 12px 0 rgba(35, 71, 53, .12);
     }
 
-    .cg-shop-card:nth-child(2) .cg-shop-art { background: #EAD7C8; }
+    .cg-shop-card:nth-child(2) .cg-shop-art {
+      background: #EAD7C8;
+    }
 
     .cg-shop-card:nth-child(2) .cg-shop-art span {
       background: var(--cg-orange);
@@ -417,13 +461,16 @@ transform: translateX(1px);
       height: 120px;
     }
 
-    .cg-shop-card:nth-child(3) .cg-shop-art { background: #D9E2E8; }
+    .cg-shop-card:nth-child(3) .cg-shop-art {
+      background: #D9E2E8;
+    }
 
     .cg-shop-card:nth-child(3) .cg-shop-art span {
       background: var(--cg-blue);
       width: 140px;
       height: 90px;
       border-radius: 4px;
+      font-size: 15px;
     }
 
     .cg-shop-card h3 {
@@ -439,6 +486,8 @@ transform: translateX(1px);
       line-height: 1.7;
       color: #526456;
     }
+
+    /* VISIT */
 
     .cg-visit {
       padding: 58px 0;
@@ -471,6 +520,8 @@ transform: translateX(1px);
       color: var(--cg-dark);
       flex-shrink: 0;
     }
+
+    /* NEWSLETTER */
 
     .cg-newsletter {
       padding: 76px 0;
@@ -517,9 +568,11 @@ transform: translateX(1px);
       font: inherit;
     }
 
+    /* FOOTER */
+
     .cg-footer {
       padding: 28px 0;
-      border-top: 1px solid rgba(35,71,53,.16);
+      border-top: 1px solid rgba(35, 71, 53, .16);
     }
 
     .cg-footer-inner {
@@ -538,6 +591,8 @@ transform: translateX(1px);
       gap: 18px;
     }
 
+    /* RESPONSIVE */
+
     @media (max-width: 900px) {
       .cg-nav {
         align-items: center;
@@ -546,9 +601,14 @@ transform: translateX(1px);
         flex-wrap: wrap;
       }
 
-      .cg-links { justify-content: flex-start; gap: 14px; }
+      .cg-links {
+        justify-content: flex-start;
+        gap: 14px;
+      }
 
-      .cg-hero { min-height: auto; }
+      .cg-hero {
+        min-height: auto;
+      }
 
       .cg-hero-grid {
         grid-template-columns: minmax(250px, .7fr) minmax(0, 1.3fr);
@@ -556,7 +616,9 @@ transform: translateX(1px);
         gap: 22px;
       }
 
-      .cg-hero-grid > div:first-child { padding: 35px 0; }
+      .cg-hero-grid > div:first-child {
+        padding: 35px 0;
+      }
 
       .cg-hero h1 {
         font-size: clamp(60px, 8vw, 82px);
@@ -564,16 +626,40 @@ transform: translateX(1px);
       }
 
       .cg-hero-image-wrap,
-      .cg-hero-image { min-height: 520px; }
+      .cg-hero-image {
+        min-height: 520px;
+      }
 
-      .cg-story-grid { gap: 35px; }
+      .cg-story-grid {
+        gap: 35px;
+      }
+
+      .cg-menu-image {
+        height: 200px;
+      }
+
+      .cg-menu-card-content {
+        padding: 22px 20px 0;
+      }
+
+      .cg-menu-card h3 {
+        font-size: 27px;
+      }
     }
 
     @media (max-width: 620px) {
-      .cg-container { width: min(100% - 32px, 1180px); }
+      .cg-container {
+        width: min(100% - 32px, 1180px);
+      }
 
-      .cg-logo-mark { width: 42px; height: 42px; }
-      .cg-logo-name { font-size: 21px; }
+      .cg-logo-mark {
+        width: 42px;
+        height: 42px;
+      }
+
+      .cg-logo-name {
+        font-size: 21px;
+      }
 
       .cg-nav {
         align-items: flex-start;
@@ -581,10 +667,18 @@ transform: translateX(1px);
         gap: 14px;
       }
 
-      .cg-links { gap: 12px 16px; font-size: 12px; }
-      .cg-nav-cta { padding: 9px 13px; }
+      .cg-links {
+        gap: 12px 16px;
+        font-size: 12px;
+      }
 
-      .cg-hero { padding: 0; }
+      .cg-nav-cta {
+        padding: 9px 13px;
+      }
+
+      .cg-hero {
+        padding: 0;
+      }
 
       .cg-hero-grid {
         display: flex;
@@ -611,7 +705,9 @@ transform: translateX(1px);
         height: 360px;
       }
 
-      .cg-section { padding: 60px 0; }
+      .cg-section {
+        padding: 60px 0;
+      }
 
       .cg-section-heading {
         align-items: flex-start;
@@ -620,18 +716,42 @@ transform: translateX(1px);
 
       .cg-menu-grid,
       .cg-shop-grid,
-      .cg-story-grid { grid-template-columns: 1fr; }
+      .cg-story-grid {
+        grid-template-columns: 1fr;
+      }
 
-      .cg-menu-card { min-height: 220px; }
-      .cg-story-art { min-height: 300px; }
+      .cg-menu-image {
+        height: 245px;
+      }
+
+      .cg-menu-card-content {
+        padding: 24px 24px 0;
+      }
+
+      .cg-menu-card h3 {
+        font-size: 31px;
+      }
+
+      .cg-story-art {
+        min-height: 300px;
+      }
+
+      .cg-story-image {
+        min-height: 300px;
+      }
 
       .cg-visit-grid {
         align-items: flex-start;
         flex-direction: column;
       }
 
-      .cg-newsletter-form { flex-direction: column; }
-      .cg-newsletter-form .cg-button { width: 100%; }
+      .cg-newsletter-form {
+        flex-direction: column;
+      }
+
+      .cg-newsletter-form .cg-button {
+        width: 100%;
+      }
     }
   </style>
 </head>
@@ -656,10 +776,12 @@ transform: translateX(1px);
   </header>
 
   <main>
+    <!-- HERO -->
     <section class="cg-hero">
       <div class="cg-container cg-hero-grid">
         <div>
           <span class="cg-eyebrow">Your neighbourhood, reimagined</span>
+
           <h1>A little<br>room<br>to <em>be.</em></h1>
 
           <p class="cg-hero-copy">
@@ -667,8 +789,12 @@ transform: translateX(1px);
           </p>
 
           <div class="cg-actions">
-            <a class="cg-button cg-button-primary" href="menu.html">Explore the menu ↗</a>
-            <a class="cg-button cg-button-secondary" href="visit.html">Find your way here</a>
+            <a class="cg-button cg-button-primary" href="menu.html">
+              Explore the menu ↗
+            </a>
+            <a class="cg-button cg-button-secondary" href="visit.html">
+              Find your way here
+            </a>
           </div>
 
           <p class="cg-hero-note">Relax. Belong. Discover.</p>
@@ -697,6 +823,7 @@ transform: translateX(1px);
       Good coffee · Good company · No rush · Make yourself at home
     </div>
 
+    <!-- MENU PREVIEW -->
     <section class="cg-section">
       <div class="cg-container">
         <div class="cg-section-heading">
@@ -709,51 +836,96 @@ transform: translateX(1px);
 
         <div class="cg-menu-grid">
           <article class="cg-menu-card">
-            <span class="cg-card-number">01 / COFFEE</span>
-            <div>
+            <img
+              class="cg-menu-image"
+              src="assets/coffee-card.png"
+              alt="Hot and iced coffee drinks at Common Ground"
+              loading="lazy"
+            >
+
+            <div class="cg-menu-card-content">
+              <span class="cg-card-number">01 / COFFEE</span>
               <h3>Your usual, or something new.</h3>
-              <p>Espresso classics, slow sips, and coffee worth taking your time over.</p>
+              <p>
+                Espresso classics, slow sips, and coffee worth taking
+                your time over.
+              </p>
+              <a class="cg-text-link" href="menu.html">Explore coffee ↗</a>
             </div>
           </article>
 
           <article class="cg-menu-card">
-            <span class="cg-card-number">02 / SOMETHING TO EAT</span>
-            <div>
+            <img
+              class="cg-menu-image"
+              src="assets/food-card.png"
+              alt="Fresh croissant and sandwich served at Common Ground"
+              loading="lazy"
+            >
+
+            <div class="cg-menu-card-content">
+              <span class="cg-card-number">02 / SOMETHING TO EAT</span>
               <h3>A little bite. A long lunch.</h3>
-              <p>Comforting plates, fresh flavours, and something to share.</p>
+              <p>
+                Comforting plates, fresh flavours, and something
+                to share.
+              </p>
+              <a class="cg-text-link" href="menu.html">Explore food ↗</a>
             </div>
           </article>
 
           <article class="cg-menu-card">
-            <span class="cg-card-number">03 / REFRESHMENTS</span>
-            <div>
+            <img
+              class="cg-menu-image"
+              src="assets/refreshments-card.png"
+              alt="Refreshing lemonade, iced tea and fruit cooler"
+              loading="lazy"
+            >
+
+            <div class="cg-menu-card-content">
+              <span class="cg-card-number">03 / REFRESHMENTS</span>
               <h3>Keep things refreshing.</h3>
-              <p>Coolers, iced favourites, and easy sips for slower afternoons.</p>
+              <p>
+                Coolers, iced favourites, and easy sips for
+                slower afternoons.
+              </p>
+              <a class="cg-text-link" href="menu.html">Explore refreshments ↗</a>
             </div>
           </article>
         </div>
       </div>
     </section>
 
+    <!-- THE COMMON GROUND FEELING -->
     <section class="cg-section cg-story">
       <div class="cg-container cg-story-grid">
         <div class="cg-story-art">
-          <p>Not just a place to go. A place to belong.</p>
+          <img
+            class="cg-story-image"
+            src="assets/cafe-feeling.png"
+            alt="The welcoming interior and relaxed atmosphere of Common Ground"
+            loading="lazy"
+          >
         </div>
 
         <div class="cg-story-copy">
-          <span class="cg-eyebrow" style="color:#E9C46A;">The Common Ground feeling</span>
+          <span class="cg-eyebrow" style="color:#E9C46A;">
+            The Common Ground feeling
+          </span>
+
           <h2>Made for the in-between moments.</h2>
+
           <p>
             The catch-ups that turn into hours. The coffee before a big day.
             The quiet corner where a new idea takes shape. Common Ground is
             built around the little moments that make an ordinary day feel special.
           </p>
+
           <a class="cg-button" href="story.html">Get to know us ↗</a>
         </div>
       </div>
     </section>
 
+    <!-- SHOP -->
     <section class="cg-section">
       <div class="cg-container">
         <div class="cg-section-heading">
@@ -766,21 +938,27 @@ transform: translateX(1px);
 
         <div class="cg-shop-grid">
           <article class="cg-shop-card">
-            <div class="cg-shop-art"><span>cg.</span></div>
+            <div class="cg-shop-art">
+              <span>cg.</span>
+            </div>
             <h3>The everyday mug</h3>
             <p>Your favourite coffee deserves a favourite cup.</p>
             <a class="cg-text-link" href="shop.html">Discover more ↗</a>
           </article>
 
           <article class="cg-shop-card">
-            <div class="cg-shop-art"><span>slow<br>down</span></div>
+            <div class="cg-shop-art">
+              <span>slow<br>down</span>
+            </div>
             <h3>Little reminders</h3>
             <p>Thoughtful things for your desk, shelf, or daily ritual.</p>
             <a class="cg-text-link" href="shop.html">Discover more ↗</a>
           </article>
 
           <article class="cg-shop-card">
-            <div class="cg-shop-art"><span>COMMON<br>GROUND</span></div>
+            <div class="cg-shop-art">
+              <span>COMMON<br>GROUND</span>
+            </div>
             <h3>Made to take along</h3>
             <p>A little piece of your neighbourhood, wherever you go.</p>
             <a class="cg-text-link" href="shop.html">Discover more ↗</a>
@@ -789,36 +967,52 @@ transform: translateX(1px);
       </div>
     </section>
 
+    <!-- VISIT -->
     <section class="cg-visit">
       <div class="cg-container cg-visit-grid">
         <div>
-          <span class="cg-eyebrow" style="color:#fff3ce;">Your table is waiting</span>
+          <span class="cg-eyebrow" style="color:#fff3ce;">
+            Your table is waiting
+          </span>
           <h2>Come find your corner.</h2>
           <p>SCO 18, Sector 9, Chandigarh, India</p>
           <p>Good coffee. Open conversations. A little room to be.</p>
         </div>
+
         <a class="cg-button" href="visit.html">Plan your visit ↗</a>
       </div>
     </section>
 
+    <!-- NEWSLETTER -->
     <section class="cg-newsletter">
       <div class="cg-container">
         <span class="cg-eyebrow">A note from us</span>
         <h2>A little good in your inbox.</h2>
+
         <p>
           New things on the menu, little happenings, and reasons to drop by.
           Only when we have something worth sharing.
         </p>
 
         <form class="cg-newsletter-form" id="cg-newsletter-form">
-          <input type="email" name="email" placeholder="Your email address" aria-label="Your email address" required>
-          <button class="cg-button cg-button-primary" type="submit">Count me in ↗</button>
+          <input
+            type="email"
+            name="email"
+            placeholder="Your email address"
+            aria-label="Your email address"
+            required
+          >
+          <button class="cg-button cg-button-primary" type="submit">
+            Count me in ↗
+          </button>
         </form>
+
         <p id="cg-newsletter-message" role="status" style="margin-top:14px;"></p>
       </div>
     </section>
   </main>
 
+  <!-- FOOTER -->
   <footer class="cg-footer">
     <div class="cg-container cg-footer-inner">
       <a class="cg-logo" href="index.html">
@@ -826,7 +1020,9 @@ transform: translateX(1px);
         <span class="cg-logo-name">common ground.</span>
       </a>
 
-      <span>© <span id="cg-year"></span> Common Ground. A little room to be.</span>
+      <span>
+        © <span id="cg-year"></span> Common Ground. A little room to be.
+      </span>
 
       <nav class="cg-footer-links" aria-label="Footer navigation">
         <a href="menu.html">Menu</a>
@@ -838,16 +1034,23 @@ transform: translateX(1px);
   </footer>
 
   <script src="script.js"></script>
-  <script>
-    document.getElementById("cg-year").textContent = new Date().getFullYear();
 
-    // Demo form only: newsletter sign-ups are not connected to a service yet.
-    document.getElementById("cg-newsletter-form").addEventListener("submit", function(event) {
-      event.preventDefault();
-      document.getElementById("cg-newsletter-message").textContent =
-        "Thanks for stopping by! Newsletter sign-ups are not connected yet.";
-      this.reset();
-    });
+  <script>
+    document.getElementById("cg-year").textContent =
+      new Date().getFullYear();
+
+    // Demo form only. Newsletter sign-ups are not connected to a service yet.
+    document.getElementById("cg-newsletter-form").addEventListener(
+      "submit",
+      function(event) {
+        event.preventDefault();
+
+        document.getElementById("cg-newsletter-message").textContent =
+          "Thanks for stopping by! Newsletter sign-ups are not connected yet.";
+
+        this.reset();
+      }
+    );
   </script>
 </body>
 </html>
