@@ -5,16 +5,48 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Shop | Common Ground</title>
+
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
+
+  <style>
+    .product-art {
+      width: 100%;
+      min-height: 0;
+      aspect-ratio: 4 / 3;
+      overflow: hidden;
+      background: #f2eee5;
+      border-radius: 4px;
+    }
+
+    .product-art .product-photo {
+      display: block;
+      width: 100%;
+      height: 100%;
+      aspect-ratio: 4 / 3;
+      object-fit: cover;
+      object-position: center;
+    }
+  </style>
 </head>
+
 <body>
 <header class="site-header">
   <div class="header-inner">
-    <a class="logo" href="index.html"><span class="logo-mark">cg</span><span class="logo-text">common<br>ground.</span></a>
+    <a class="logo" href="index.html">
+      <span class="logo-mark">cg</span>
+      <span class="logo-text">common<br>ground.</span>
+    </a>
+
     <button class="menu-toggle" aria-label="Open navigation" aria-expanded="false">☰</button>
+
     <nav class="nav-links">
-      <a href="index.html">Home</a><a href="menu.html">Menu</a><a class="active" href="shop.html">Shop</a><a href="story.html">Our Story</a><a href="visit.html">Visit</a><a href="customise.html">Customise</a>
+      <a href="index.html">Home</a>
+      <a href="menu.html">Menu</a>
+      <a class="active" href="shop.html">Shop</a>
+      <a href="story.html">Our Story</a>
+      <a href="visit.html">Visit</a>
+      <a href="customise.html">Customise</a>
     </nav>
   </div>
 </header>
@@ -27,33 +59,51 @@
       <p>Thoughtful everyday objects, made for coffee rituals, slow mornings and everything in between.</p>
       <span class="hero-star">✳</span>
     </div>
-    <div class="shop-hero-art" aria-hidden="true"><span class="hero-cup">cg</span><span class="hero-leaf">✳</span></div>
+
+    <div class="shop-hero-art" aria-hidden="true">
+      <span class="hero-cup">cg</span>
+      <span class="hero-leaf">✳</span>
+    </div>
   </section>
 
   <section class="shop-products section">
+
     <article class="shop-product">
-      <div class="product-art mug-art" aria-label="Illustration of a metal and ceramic mug">
-        <div class="mug-shape metal-mug"><span>common<br>ground.</span></div>
-        <div class="mug-shape ceramic-mug"><span>common<br>ground.</span></div>
-        <span class="art-spark">✳</span>
+      <div class="product-art mug-art">
+        <img
+          class="product-photo"
+          src="assets/everyday-mug.png"
+          alt="The Everyday Mug by Common Ground"
+          loading="lazy"
+        >
       </div>
+
       <div class="product-info">
         <p class="eyebrow">OBJECT 001</p>
         <h2>The Everyday Mug</h2>
         <p>For your daily little pause</p>
         <span class="product-rule"></span>
-        <p class="product-detail">Metal & Ceramic Mug</p>
+        <p class="product-detail">Metal &amp; Ceramic Mug</p>
         <p class="product-price">₹249</p>
-        <a class="product-enquire" href="https://wa.me/919xxxxxxxx9?text=Hi%20Common%20Ground%2C%20I%27m%20interested%20in%20The%20Everyday%20Mug." target="_blank" rel="noopener noreferrer">Enquire ↗</a>
+        <a
+          class="product-enquire"
+          href="https://wa.me/919xxxxxxxx9?text=Hi%20Common%20Ground%2C%20I%27m%20interested%20in%20The%20Everyday%20Mug."
+          target="_blank"
+          rel="noopener noreferrer"
+        >Enquire ↗</a>
       </div>
     </article>
 
     <article class="shop-product">
-      <div class="product-art tote-art" aria-label="Illustration of a printed tote bag">
-        <div class="tote-handle"></div>
-        <div class="tote-bag"><span>common<br>ground.</span><b>✿</b></div>
-        <span class="art-spark">✳</span>
+      <div class="product-art tote-art">
+        <img
+          class="product-photo"
+          src="assets/carry-all-tote.png"
+          alt="The Carry-All Tote by Common Ground"
+          loading="lazy"
+        >
       </div>
+
       <div class="product-info">
         <p class="eyebrow">OBJECT 002</p>
         <h2>The Carry-All Tote</h2>
@@ -61,16 +111,25 @@
         <span class="product-rule"></span>
         <p class="product-detail">Printed Tote</p>
         <p class="product-price">₹249</p>
-        <a class="product-enquire" href="https://wa.me/919xxxxxxxx9?text=Hi%20Common%20Ground%2C%20I%27m%20interested%20in%20The%20Carry-All%20Tote." target="_blank" rel="noopener noreferrer">Enquire ↗</a>
+        <a
+          class="product-enquire"
+          href="https://wa.me/919xxxxxxxx9?text=Hi%20Common%20Ground%2C%20I%27m%20interested%20in%20The%20Carry-All%20Tote."
+          target="_blank"
+          rel="noopener noreferrer"
+        >Enquire ↗</a>
       </div>
     </article>
 
     <article class="shop-product">
-      <div class="product-art coffee-art" aria-label="Illustration of a bag of house coffee">
-        <div class="coffee-bag"><span class="bag-brand">common<br>ground.</span><span class="bag-label">HOUSE COFFEE</span></div>
-        <span class="coffee-beans">● ● ●</span>
-        <span class="art-spark">✳</span>
+      <div class="product-art coffee-art">
+        <img
+          class="product-photo"
+          src="assets/house-coffee.png"
+          alt="Common Ground House Coffee"
+          loading="lazy"
+        >
       </div>
+
       <div class="product-info">
         <p class="eyebrow">OBJECT 003</p>
         <h2>House Coffee</h2>
@@ -78,17 +137,25 @@
         <span class="product-rule"></span>
         <p class="product-detail">Ground Coffee</p>
         <p class="product-price">₹499</p>
-        <a class="product-enquire" href="https://wa.me/919xxxxxxxx9?text=Hi%20Common%20Ground%2C%20I%27m%20interested%20in%20House%20Coffee." target="_blank" rel="noopener noreferrer">Enquire ↗</a>
+        <a
+          class="product-enquire"
+          href="https://wa.me/919xxxxxxxx9?text=Hi%20Common%20Ground%2C%20I%27m%20interested%20in%20House%20Coffee."
+          target="_blank"
+          rel="noopener noreferrer"
+        >Enquire ↗</a>
       </div>
     </article>
 
     <article class="shop-product">
-      <div class="product-art little-art" aria-label="Illustration of coasters, keychains and a lamp">
-        <div class="coaster-stack"><span>cg</span><span>✿</span></div>
-        <div class="keyring">cg</div>
-        <div class="little-lamp"><span></span><b></b></div>
-        <span class="art-spark">✳</span>
+      <div class="product-art little-art">
+        <img
+          class="product-photo"
+          src="assets/little-things.png"
+          alt="Common Ground Little Things Collection"
+          loading="lazy"
+        >
       </div>
+
       <div class="product-info">
         <p class="eyebrow">OBJECT 004</p>
         <h2>Little Things Collection</h2>
@@ -96,21 +163,43 @@
         <span class="product-rule"></span>
         <p class="product-detail">Coasters · Keychains · Lamps</p>
         <p class="product-price">₹99 – ₹499</p>
-        <a class="product-enquire" href="https://wa.me/919xxxxxxxx9?text=Hi%20Common%20Ground%2C%20I%27d%20like%20to%20enquire%20about%20the%20Little%20Things%20Collection." target="_blank" rel="noopener noreferrer">Enquire ↗</a>
+        <a
+          class="product-enquire"
+          href="https://wa.me/919xxxxxxxx9?text=Hi%20Common%20Ground%2C%20I%27d%20like%20to%20enquire%20about%20the%20Little%20Things%20Collection."
+          target="_blank"
+          rel="noopener noreferrer"
+        >Enquire ↗</a>
       </div>
     </article>
+
   </section>
 
   <section class="shop-contact">
-    <div><p class="eyebrow">INTERESTED?</p><h2>Let's chat.</h2><p>For orders, enquiries or custom requests,<br>reach out to us on WhatsApp.</p></div>
-    <a class="button whatsapp-button" href="https://wa.me/919xxxxxxxx9?text=Hi%20Common%20Ground%2C%20I%27d%20like%20to%20enquire%20about%20your%20shop." target="_blank" rel="noopener noreferrer">☏ &nbsp; Enquire on WhatsApp ↗</a>
+    <div>
+      <p class="eyebrow">INTERESTED?</p>
+      <h2>Let's chat.</h2>
+      <p>For orders, enquiries or custom requests,<br>reach out to us on WhatsApp.</p>
+    </div>
+
+    <a
+      class="button whatsapp-button"
+      href="https://wa.me/919xxxxxxxx9?text=Hi%20Common%20Ground%2C%20I%27d%20like%20to%20enquire%20about%20your%20shop."
+      target="_blank"
+      rel="noopener noreferrer"
+    >☏ &nbsp; Enquire on WhatsApp ↗</a>
   </section>
 </main>
 
 <footer class="site-footer">
-  <a class="logo footer-logo" href="index.html"><span class="logo-mark">cg</span><span class="logo-text">common<br>ground.</span></a>
-  <p>Good coffee. Thoughtful objects. A kinder pace.</p><p>© <span class="year"></span> Common Ground.</p>
+  <a class="logo footer-logo" href="index.html">
+    <span class="logo-mark">cg</span>
+    <span class="logo-text">common<br>ground.</span>
+  </a>
+
+  <p>Good coffee. Thoughtful objects. A kinder pace.</p>
+  <p>© <span class="year"></span> Common Ground.</p>
 </footer>
+
 <script src="script.js"></script>
 </body>
 </html>
