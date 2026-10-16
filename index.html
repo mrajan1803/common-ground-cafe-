@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,8 +11,6 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
-
-  <link rel="stylesheet" href="style.css">
 
   <style>
     :root {
@@ -95,7 +94,6 @@
     }
 
     .cg-logo-name {
-      font-family: "DM Sans", sans-serif;
       font-size: 16px;
       letter-spacing: -.3px;
       white-space: nowrap;
@@ -117,7 +115,6 @@
     .cg-nav-cta {
       background: transparent;
       color: var(--cg-dark) !important;
-      padding: 0;
     }
 
     /* HERO */
@@ -224,6 +221,7 @@
       min-width: 0;
       min-height: 650px;
       overflow: hidden;
+      background: #e4d3b7;
     }
 
     .cg-hero-image {
@@ -232,7 +230,6 @@
       min-height: 650px;
       object-fit: cover;
       object-position: center;
-      background: #e4d3b7;
     }
 
     .cg-image-caption {
@@ -244,6 +241,23 @@
       font-family: "Playfair Display", serif;
       font-size: 15px;
       font-style: italic;
+    }
+
+    /* IMAGE FALLBACK */
+
+    .cg-image-fallback {
+      display: none;
+      width: 100%;
+      height: 100%;
+      min-height: inherit;
+      padding: 30px;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      background: #e8dfcf;
+      color: var(--cg-dark);
+      font-family: "Playfair Display", serif;
+      font-size: 22px;
     }
 
     /* TICKER */
@@ -290,7 +304,11 @@
       white-space: nowrap;
     }
 
-    /* MENU CARDS WITH PHOTOS */
+    .cg-text-link:hover {
+      color: var(--cg-orange);
+    }
+
+    /* MENU CARDS */
 
     .cg-menu-grid {
       display: grid;
@@ -323,6 +341,7 @@
       height: 245px;
       object-fit: cover;
       object-position: center;
+      background: #e8dfcf;
     }
 
     .cg-menu-card-content {
@@ -358,7 +377,7 @@
       margin-top: auto;
     }
 
-    /* COMMON GROUND STORY */
+    /* STORY */
 
     .cg-story {
       background: var(--cg-dark);
@@ -371,9 +390,6 @@
       align-items: center;
       gap: 65px;
     }
-
-    /* The original yellow graphic is replaced with the café photo.
-       The dark green background and right-side copy stay unchanged. */
 
     .cg-story-art {
       position: relative;
@@ -394,15 +410,6 @@
       object-position: center;
     }
 
-    .cg-story-art::before,
-    .cg-story-art::after {
-      display: none;
-    }
-
-    .cg-story-art p {
-      display: none;
-    }
-
     .cg-story-copy p {
       max-width: 470px;
       color: #d6dfd5;
@@ -415,7 +422,7 @@
       border: 1px solid rgba(243, 235, 221, .6);
     }
 
-    /* SHOP */
+    /* SHOP PREVIEW */
 
     .cg-shop-grid {
       display: grid;
@@ -429,48 +436,47 @@
     }
 
     .cg-shop-art {
-      min-height: 210px;
-      display: grid;
-      place-items: center;
-      background: #D8DFD0;
+      position: relative;
+      width: 100%;
+      aspect-ratio: 4 / 3;
+      overflow: hidden;
       margin-bottom: 22px;
+      background: #D8DFD0;
     }
 
-    .cg-shop-art span {
-      width: 100px;
-      height: 125px;
-      display: grid;
-      place-items: center;
-      border-radius: 7px 7px 17px 17px;
-      background: var(--cg-green);
-      color: white;
-      font-family: "Playfair Display", serif;
-      font-size: 26px;
+    .cg-shop-art img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      transition: transform .35s ease;
+    }
+
+    .cg-shop-card:hover .cg-shop-art img {
+      transform: scale(1.04);
+    }
+
+    .cg-shop-art .cg-shop-fallback {
+      display: none;
+      position: absolute;
+      inset: 0;
+      align-items: center;
+      justify-content: center;
       text-align: center;
-      box-shadow: 9px 12px 0 rgba(35, 71, 53, .12);
+      padding: 20px;
+      font-family: "Playfair Display", serif;
+      font-size: 22px;
+      background: #D8DFD0;
+      color: var(--cg-dark);
     }
 
-    .cg-shop-card:nth-child(2) .cg-shop-art {
+    .cg-shop-card:nth-child(2) .cg-shop-art .cg-shop-fallback {
       background: #EAD7C8;
     }
 
-    .cg-shop-card:nth-child(2) .cg-shop-art span {
-      background: var(--cg-orange);
-      border-radius: 50%;
-      width: 120px;
-      height: 120px;
-    }
-
-    .cg-shop-card:nth-child(3) .cg-shop-art {
+    .cg-shop-card:nth-child(3) .cg-shop-art .cg-shop-fallback {
       background: #D9E2E8;
-    }
-
-    .cg-shop-card:nth-child(3) .cg-shop-art span {
-      background: var(--cg-blue);
-      width: 140px;
-      height: 90px;
-      border-radius: 4px;
-      font-size: 15px;
     }
 
     .cg-shop-card h3 {
@@ -806,14 +812,11 @@
             src="assets/cafe-interior.png"
             alt="The warm, colourful interior of Common Ground cafe"
             fetchpriority="high"
-            onerror="this.style.display='none'; document.getElementById('cg-image-error').hidden=false;"
+            onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
           >
-
-          <div id="cg-image-error" hidden style="padding:40px;background:#e8dfcf;color:#234735;">
-            The café photo could not be loaded. Check that
-            <strong>assets/cafe-interior.png</strong> exists in your repository.
+          <div class="cg-image-fallback">
+            Common Ground.<br>A space to slow down.
           </div>
-
           <div class="cg-image-caption">A space to slow down.</div>
         </div>
       </div>
@@ -841,15 +844,12 @@
               src="assets/coffee-card.png"
               alt="Hot and iced coffee drinks at Common Ground"
               loading="lazy"
+              onerror="this.style.visibility='hidden';"
             >
-
             <div class="cg-menu-card-content">
               <span class="cg-card-number">01 / COFFEE</span>
               <h3>Your usual, or something new.</h3>
-              <p>
-                Espresso classics, slow sips, and coffee worth taking
-                your time over.
-              </p>
+              <p>Espresso classics, slow sips, and coffee worth taking your time over.</p>
               <a class="cg-text-link" href="menu.html">Explore coffee ↗</a>
             </div>
           </article>
@@ -860,15 +860,12 @@
               src="assets/food-card.png"
               alt="Fresh croissant and sandwich served at Common Ground"
               loading="lazy"
+              onerror="this.style.visibility='hidden';"
             >
-
             <div class="cg-menu-card-content">
               <span class="cg-card-number">02 / SOMETHING TO EAT</span>
               <h3>A little bite. A long lunch.</h3>
-              <p>
-                Comforting plates, fresh flavours, and something
-                to share.
-              </p>
+              <p>Comforting plates, fresh flavours, and something to share.</p>
               <a class="cg-text-link" href="menu.html">Explore food ↗</a>
             </div>
           </article>
@@ -879,15 +876,12 @@
               src="assets/refreshments-card.png"
               alt="Refreshing lemonade, iced tea and fruit cooler"
               loading="lazy"
+              onerror="this.style.visibility='hidden';"
             >
-
             <div class="cg-menu-card-content">
               <span class="cg-card-number">03 / REFRESHMENTS</span>
               <h3>Keep things refreshing.</h3>
-              <p>
-                Coolers, iced favourites, and easy sips for
-                slower afternoons.
-              </p>
+              <p>Coolers, iced favourites, and easy sips for slower afternoons.</p>
               <a class="cg-text-link" href="menu.html">Explore refreshments ↗</a>
             </div>
           </article>
@@ -904,28 +898,24 @@
             src="assets/cafe-feeling.png"
             alt="The welcoming interior and relaxed atmosphere of Common Ground"
             loading="lazy"
+            onerror="this.style.display='none';"
           >
         </div>
 
         <div class="cg-story-copy">
-          <span class="cg-eyebrow" style="color:#E9C46A;">
-            The Common Ground feeling
-          </span>
-
+          <span class="cg-eyebrow" style="color:#E9C46A;">The Common Ground feeling</span>
           <h2>Made for the in-between moments.</h2>
-
           <p>
             The catch-ups that turn into hours. The coffee before a big day.
             The quiet corner where a new idea takes shape. Common Ground is
             built around the little moments that make an ordinary day feel special.
           </p>
-
           <a class="cg-button" href="story.html">Get to know us ↗</a>
         </div>
       </div>
     </section>
 
-    <!-- SHOP -->
+    <!-- SHOP PREVIEW WITH YOUR PRODUCT PHOTOS -->
     <section class="cg-section">
       <div class="cg-container">
         <div class="cg-section-heading">
@@ -939,27 +929,45 @@
         <div class="cg-shop-grid">
           <article class="cg-shop-card">
             <div class="cg-shop-art">
-              <span>cg.</span>
+              <img
+                src="assets/home-mug.png"
+                alt="The Everyday Mug by Common Ground"
+                loading="lazy"
+                onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+              >
+              <div class="cg-shop-fallback">The Everyday Mug</div>
             </div>
-            <h3>The everyday mug</h3>
+            <h3>The Everyday Mug</h3>
             <p>Your favourite coffee deserves a favourite cup.</p>
             <a class="cg-text-link" href="shop.html">Discover more ↗</a>
           </article>
 
           <article class="cg-shop-card">
             <div class="cg-shop-art">
-              <span>slow<br>down</span>
+              <img
+                src="assets/home-reminders.png"
+                alt="Little Reminders collection of coasters and keychains"
+                loading="lazy"
+                onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+              >
+              <div class="cg-shop-fallback">Little Reminders</div>
             </div>
-            <h3>Little reminders</h3>
+            <h3>Little Reminders</h3>
             <p>Thoughtful things for your desk, shelf, or daily ritual.</p>
             <a class="cg-text-link" href="shop.html">Discover more ↗</a>
           </article>
 
           <article class="cg-shop-card">
             <div class="cg-shop-art">
-              <span>COMMON<br>GROUND</span>
+              <img
+                src="assets/home-coffee.png"
+                alt="Common Ground coffee to enjoy at home"
+                loading="lazy"
+                onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+              >
+              <div class="cg-shop-fallback">Common Ground Coffee</div>
             </div>
-            <h3>Made to take along</h3>
+            <h3>Made to Take Along</h3>
             <p>A little piece of your neighbourhood, wherever you go.</p>
             <a class="cg-text-link" href="shop.html">Discover more ↗</a>
           </article>
@@ -971,14 +979,11 @@
     <section class="cg-visit">
       <div class="cg-container cg-visit-grid">
         <div>
-          <span class="cg-eyebrow" style="color:#fff3ce;">
-            Your table is waiting
-          </span>
+          <span class="cg-eyebrow" style="color:#fff3ce;">Your table is waiting</span>
           <h2>Come find your corner.</h2>
           <p>SCO 18, Sector 9, Chandigarh, India</p>
           <p>Good coffee. Open conversations. A little room to be.</p>
         </div>
-
         <a class="cg-button" href="visit.html">Plan your visit ↗</a>
       </div>
     </section>
@@ -988,7 +993,6 @@
       <div class="cg-container">
         <span class="cg-eyebrow">A note from us</span>
         <h2>A little good in your inbox.</h2>
-
         <p>
           New things on the menu, little happenings, and reasons to drop by.
           Only when we have something worth sharing.
@@ -1020,9 +1024,7 @@
         <span class="cg-logo-name">common ground.</span>
       </a>
 
-      <span>
-        © <span id="cg-year"></span> Common Ground. A little room to be.
-      </span>
+      <span>© <span id="cg-year"></span> Common Ground. A little room to be.</span>
 
       <nav class="cg-footer-links" aria-label="Footer navigation">
         <a href="menu.html">Menu</a>
@@ -1032,8 +1034,6 @@
       </nav>
     </div>
   </footer>
-
-  <script src="script.js"></script>
 
   <script>
     document.getElementById("cg-year").textContent =
